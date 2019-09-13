@@ -33,8 +33,7 @@ public class Hero {
 	}
 	
 	public int doDamage(Hero target) {
-		target.takeDamage(power);
-		return (power);
+		return (target.takeDamage(power));
 	}
 	
 	public boolean isDefeated() {
