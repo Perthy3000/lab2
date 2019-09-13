@@ -6,11 +6,14 @@ public class Sword {
 	private int durability;
 	
 	public Sword(int attack, int durability) {
-		this.attack = attack < 0 ? 0 : attack;
+		this.attack = attack < 1 ? 1 : attack;
 		this.durability = durability < 1 ? 1 : durability;
 	}
 	
 	public void upgrade(int val) {
+		if(val < 0) {
+			val = 0;
+		}
 		this.attack += val;
 		this.durability++;
 	}
@@ -19,11 +22,14 @@ public class Sword {
 		attack = attack < 1 ? 1 : attack;
 		this.durability--;
 		int damage = attack -= this.attack;
+		if(damage < 0) {
+			damage = 0;
+		}
 		return damage;
 	}
 	
 	public boolean isBroken() {
-		return this.durability == 0;
+		return this.durability <= 0;
 	}
 	
 	public int getAttack() {
