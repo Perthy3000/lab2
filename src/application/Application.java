@@ -5,6 +5,7 @@ import logic.*;
 
 //	//Uncomment this to enable Blacksmith
 //	import blacksmith.Blacksmith;
+// fuck this shit
 
 public class Application {
 
